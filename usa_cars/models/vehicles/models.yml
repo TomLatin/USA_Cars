@@ -21,9 +21,24 @@ models:
           - not_null
       - name: country
         description: "Country where the car is from"
+        tests:
+          - not_null
 
 
   - name: brand_model_stats
+    tests:
+      - dbt_expectations.expect_column_pair_values_A_to_be_greater_than_B:
+          column_A: max_price
+          column_B: min_price
+          or_equal: True
+      - dbt_expectations.expect_column_pair_values_A_to_be_greater_than_B:
+          column_A: max_year
+          column_B: min_year
+          or_equal: True
+      - dbt_expectations.expect_column_pair_values_A_to_be_greater_than_B:
+          column_A: max_mileage
+          column_B: min_mileage
+          or_equal: True
     description: "Aggregated statistics for each car brand and model"
     columns:
       - name: brand
@@ -32,6 +47,11 @@ models:
       - name: model
         tests:
           - not_null
+      - name: min_price
+        description: "Minimum price for the brand and model"
+      - name: max_price
+        description: "Maximum price for the brand and model"
+
 
 
   - name: high_value_cars
@@ -40,4 +60,9 @@ models:
       - name: price
         tests:
           - not_null
+      - name: year_price_percentile
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0.9
+              max_value: 1.0
 

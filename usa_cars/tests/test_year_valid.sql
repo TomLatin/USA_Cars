@@ -1,0 +1,3 @@
+SELECT year
+FROM {{ref('all_cars')}}
+WHERE year > EXTRACT(YEAR FROM CURRENT_DATE)
