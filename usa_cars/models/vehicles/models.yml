@@ -5,24 +5,39 @@ models:
     description: "All car data from the USA Cars dataset"
     columns:
       - name: brand
+        description: "Brand of the car"
         tests:
           - not_null
       - name: model
+        description: "Model of the car"
         tests:
           - not_null
       - name: mileage
+        description: "Mileage of the car"
         tests:
           - not_null
       - name: year
+        description: "Manufacturing year of the car"
         tests:
           - not_null
       - name: price
+        description: "Price of the car"
         tests:
           - not_null
       - name: country
         description: "Country where the car is from"
         tests:
           - not_null
+      - name: title_status
+        description: "Status of the car title (e.g., clean, salvage)"
+      - name: color
+        description: "Color of the car"
+      - name: vin
+        description: "Vehicle Identification Number"
+      - name: lot
+        description: "Lot number associated with the car"
+      - name: state
+        description: "State where the car is located"
 
 
   - name: brand_model_stats
@@ -42,15 +57,31 @@ models:
     description: "Aggregated statistics for each car brand and model"
     columns:
       - name: brand
+        description: "Brand of the car"
         tests:
           - not_null
       - name: model
+        description: "Model of the car"
         tests:
           - not_null
+      - name: min_year
+        description: "Earliest manufacturing year for the brand and model"
+      - name: max_year
+        description: "Latest manufacturing year for the brand and model"
+      - name: median_year
+        description: "Median manufacturing year for the brand and model"
+      - name: min_mileage
+        description: "Minimum mileage for the brand and model"
+      - name: max_mileage
+        description: "Maximum mileage for the brand and model"
+      - name: median_mileage
+        description: "Median mileage for the brand and model"
       - name: min_price
         description: "Minimum price for the brand and model"
       - name: max_price
         description: "Maximum price for the brand and model"
+      - name: median_price
+        description: "Median price for the brand and model"
 
 
 
@@ -58,9 +89,31 @@ models:
     description: "Cars in the top 10 percentiles based on price, partitioned by year"
     columns:
       - name: price
+        description: "Price of the car"
         tests:
           - not_null
+      - name: brand
+        description: "Brand of the car"
+      - name: model
+        description: "Model of the car"
+      - name: year
+        description: "Manufacturing year of the car"
+      - name: title_status
+        description: "Status of the car title (e.g., clean, salvage)"
+      - name: mileage
+        description: "Mileage of the car"
+      - name: color
+        description: "Color of the car"
+      - name: vin
+        description: "Vehicle Identification Number"
+      - name: lot
+        description: "Lot number associated with the car"
+      - name: state
+        description: "State where the car is located"
+      - name: country
+        description: "Country where the car is from"
       - name: year_price_percentile
+        description: "Percentile rank of the car's price within its manufacturing year"
         tests:
           - dbt_expectations.expect_column_values_to_be_between:
               min_value: 0.9
