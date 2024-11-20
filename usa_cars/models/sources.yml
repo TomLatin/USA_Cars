@@ -1,8 +1,8 @@
 version: 2
 
 sources:
-  - name: usa_cars_source   # Logical name for the source
-    database: dev           # The DuckDB database name
-    schema: main            # The schema containing your table
+  - name: usa_cars_source
+    database: dev
+    schema: main
     tables:
-      - name: usa_cars_datasets  # The table name
+      - name: usa_cars_datasets
