@@ -26,3 +26,6 @@ models:
   usa_cars:
     vehicles:
       +materialized: view
+
+tests:
+  +store_failures: true
