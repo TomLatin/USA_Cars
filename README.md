@@ -17,11 +17,16 @@ Make sure you have the following installed on your machine:
    git clone <repository-url>
    cd <repository-directory>
     ```
-2. Install required Python packages:
+2. Create and Activate the Virtual Environment:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate
+    ```
+3. Install required Python packages:
    ```bash
    pip install -r requirements.txt
    ```
-3. Install dbt dependencies:
+4. Install dbt dependencies:
    ```bash
    dbt deps
    ```
