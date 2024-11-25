@@ -1,14 +1,14 @@
-SELECT
+select
     price,
     brand,
     model,
-    "year",
+    year,
     title_status,
-    mileage AS mile_age,
+    mileage as mile_age,
     color,
     vin,
     lot,
-    "state",
+    state,
     country,
     condition
-FROM {{ source('usa_cars_source', 'usa_cars_datasets') }}
+from {{ source('usa_cars_source', 'usa_cars_datasets') }}
