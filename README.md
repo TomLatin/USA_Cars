@@ -33,10 +33,7 @@ Make sure you have the following installed on your machine:
 
 <h2 style="color:#ADD8E6;">How to Use</h2>
 
-### 1. Configure dbt Profile
-Ensure that you are using the provided `profiles.yml` and `dbt_project.yml` files. These files configure the necessary settings for dbt to work with your environment.
-
-### 2. Run dbt Commands
+### 1. Run dbt Commands
 To build all models:
 ```bash
 dbt run
@@ -46,7 +43,7 @@ Run tests to validate the data:
 ```bash
 dbt test
 ```
-### 3. Generate Documentation
+### 2. Generate Documentation
 Generate documentation for the project:
 ```bash
 dbt docs generate
