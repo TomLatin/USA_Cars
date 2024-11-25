@@ -6,7 +6,8 @@ name: 'usa_cars'
 version: '1.0.0'
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'usa_cars'
+# Using the `env_var` function to dynamically set the profile.
+profile: "{{ env_var('DBT_PROFILE', 'usa_cars') }}"
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
