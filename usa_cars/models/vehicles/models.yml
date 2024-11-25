@@ -12,7 +12,7 @@ models:
         description: "Model of the car"
         tests:
           - not_null
-      - name: mileage
+      - name: mile_age
         description: "Mileage of the car"
         tests:
           - not_null
@@ -51,8 +51,8 @@ models:
           column_B: min_year
           or_equal: True
       - dbt_expectations.expect_column_pair_values_A_to_be_greater_than_B:
-          column_A: max_mileage
-          column_B: min_mileage
+          column_A: max_mile_age
+          column_B: min_mile_age
           or_equal: True
     description: "Aggregated statistics for each car brand and model"
     columns:
@@ -70,12 +70,12 @@ models:
         description: "Latest manufacturing year for the brand and model"
       - name: median_year
         description: "Median manufacturing year for the brand and model"
-      - name: min_mileage
-        description: "Minimum mileage for the brand and model"
-      - name: max_mileage
-        description: "Maximum mileage for the brand and model"
-      - name: median_mileage
-        description: "Median mileage for the brand and model"
+      - name: min_mile_age
+        description: "Minimum mile_age for the brand and model"
+      - name: max_mile_age
+        description: "Maximum mile_age for the brand and model"
+      - name: median_mile_age
+        description: "Median mile_age for the brand and model"
       - name: min_price
         description: "Minimum price for the brand and model"
       - name: max_price
@@ -100,7 +100,7 @@ models:
         description: "Manufacturing year of the car"
       - name: title_status
         description: "Status of the car title (e.g., clean, salvage)"
-      - name: mileage
+      - name: mile_age
         description: "Mileage of the car"
       - name: color
         description: "Color of the car"
