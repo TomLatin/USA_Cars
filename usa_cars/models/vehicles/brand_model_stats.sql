@@ -4,9 +4,9 @@ SELECT
     MIN(year) AS min_year,
     MAX(year) AS max_year,
     MEDIAN(year) AS median_year,
-    MIN(mileage) AS min_mileage,
-    MAX(mileage) AS max_mileage,
-    MEDIAN(mileage) AS median_mileage,
+    MIN(mile_age) AS min_mile_age,
+    MAX(mile_age) AS max_mile_age,
+    MEDIAN(mile_age) AS median_mile_age,
     MIN(price) AS min_price,
     MAX(price) AS max_price,
     MEDIAN(price) AS median_price
