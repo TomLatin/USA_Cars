@@ -20,7 +20,7 @@ Make sure you have the following installed on your machine:
 2. Create and Activate the Virtual Environment:
     ```bash
     python -m venv venv
-    source venv/bin/activate
+    .\venv\Scripts\activate
     ```
 3. Install required Python packages:
    ```bash
